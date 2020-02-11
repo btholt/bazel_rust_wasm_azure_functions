@@ -7,6 +7,9 @@ const wasm_gen: AzureFunction = async function (context: Context, req: HttpReque
     context.res = {
         body: {
             project: await generate()
+        },
+        headers: {
+            "Content-Type": "application/json"
         }
     };
 };
